@@ -1,9 +1,9 @@
 <?php
 function connect() {
     $host="localhost";
-    $user="root";
-    $password="TYSon777";
-    $dbname="project";
+    $user="046588651_media";
+    $password="32vgpfQpbf<2";
+    $dbname="9082410193_promedia";
     static $con;
 
     if(empty($con)) {
