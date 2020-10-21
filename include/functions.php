@@ -11,7 +11,7 @@ function connect() {
         or die ('Нет соединения с сервером ' . mysqli_connect_error());
     }
 
-    if(!$con -> set_charset("utf-8")) {
+    if(!$con -> set_charset("utf8")) {
         mysqli_error($con);
     } else {
         mysqli_character_set_name($con);
