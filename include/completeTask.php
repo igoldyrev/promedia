@@ -8,9 +8,6 @@ While ($row = mysqli_fetch_assoc($resCompleteSelect))
     $completeStatusName = $row['name'];
 }
 
-var_dump($completeId);
-var_dump($completeStatusName);
-
 if(isset($_GET['complete_id'])) {
 
     $queryCompleteTask = "update tasks set status_id = 2 where id = " . mysqli_real_escape_string(connect(), $_GET['complete_id']) . "";
