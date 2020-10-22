@@ -20,12 +20,14 @@ if(isset($_POST['edit'])) {
 } ?>
 
 <form action="/index.php?task_id=<?=$_GET['task_id'] ?>" method="post">
-    <input type="hidden" name="id" value="<?=$_GET['id']?>">
-    <label for="text">Заголовок задачи:</label>
-    <input id="text" size="30" name="text" value="<?=$editText?>">
-    <label for="user">Пользователь:</label>
-    <input id="user" size="30" name="user" value="<?=$editUsername?>">
-    <label for="email">Email:</label>
-    <input id="email" size="30" name="email" value="<?=$editEmail?>">
-    <input class="btn btn-secondary" name="edit" type="submit" value="Редактировать">
+    <div class="form-group">
+        <input class="form-control" type="hidden" name="id" value="<?=$_GET['id']?>">
+        <label for="text">Заголовок задачи:</label>
+        <input class="form-control" id="text" size="30" name="text" value="<?=$editText?>">
+        <label for="user">Пользователь:</label>
+        <input class="form-control" id="user" size="30" name="user" value="<?=$editUsername?>">
+        <label for="email">Email:</label>
+        <input class="form-control" id="email" size="30" name="email" value="<?=$editEmail?>">
+        <input class="btn btn-secondary" name="edit" type="submit" value="Редактировать">
+    </div>
 </form>
