@@ -50,14 +50,23 @@ function getTasks($orderBy) {
 
     While ($row = mysqli_fetch_assoc($resCountTasksOnPage))
     {?>
-        <p><?=$row['text'] . ' ' . $row['username'] . ' ' . $row['email'] . ' ' . $row['name']; editAdmin($row['id'])?></p><?php
+        <tr>
+            <th scope="row"><?=$row['text']?></th>
+            <th scope="row"><?=$row['username']?></th>
+            <th scope="row"><?=$row['email']?></th>
+            <th scope="row"><?=$row['name']?></th>
+            <th scope="row"><?=editAdmin($row['id'])?></th><?php
 
-       if(isset($_SESSION['login'])) {?>
-           <a href="/?task_id=<?=$row['id']?>">Редактировать</a>
-           <a href="/?complete_id=<?=$row['id']?>">Пометить выполненным</a><?php
-       }
-    }?>
+            if(isset($_SESSION['login'])) {?>
+                <th scope="row"><a href="/?task_id=<?=$row['id']?>">Редактировать</a></th>
+                <th scope="row"><a href="/?complete_id=<?=$row['id']?>">Пометить выполненным</a></th><?php
+            } ?>
+        </tr>
 
+        <?php
+    } ?>
+    </tbody>
+    </table>
     <ul class="pagination"><?php
         for ($page = 1; $page <= $numPages; $page++)
         {

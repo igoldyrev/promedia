@@ -18,11 +18,18 @@ include ($_SERVER['DOCUMENT_ROOT'].'/templates/header.php'); ?>
                 } ?>
             </div>
             <?php $orderBy = ''; ?>
-            <div class="table">
-                <a href="/?orderby=name">Название</a>
-                <a href="/?orderby=author">Автор</a>
-                <a href="/?orderby=email">Email</a>
-                <a href="/?orderby=status">Статус</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"><a href="/?orderby=name">Название</a></th>
+                        <th scope="col"><a href="/?orderby=author">Автор</a></th>
+                        <th scope="col"><a href="/?orderby=email">Email</a></th>
+                        <th scope="col"><a href="/?orderby=status">Статус</a></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
                 <?php
                 if(!empty($_GET['orderby']) && $_GET['orderby'] == 'name') {
                     $orderBy = 'text';
@@ -35,9 +42,9 @@ include ($_SERVER['DOCUMENT_ROOT'].'/templates/header.php'); ?>
                 } else {
                     $orderBy = 'tasks.id';
                 } ?>
+                <tbody>
+                    <?=getTasks($orderBy) ?>
 
-                <?=getTasks($orderBy) ?>
-            </div>
         </div>
         <div class="right-collum-index">
             <div class="project-folders-menu">
